@@ -42,7 +42,7 @@ const Services: React.FC = () => {
         </motion.p>
       </LampContainer>
 
-      <div className="container mx-auto px-6 py-16">
+      <div className="container mx-auto px-6 pb-16">
 
         {/* Animated Feature Carousel */}
         <div className="mb-16">
