@@ -17,11 +17,11 @@ const Header: React.FC = () => {
           {/* Mobile Layout */}
           <div className="mobile-header">
             <Link to="/" className="logo mobile-logo-container">
-              <img 
-                src="/Untitled design (1).png" 
-                alt="Omni Solutions Logo" 
-                className="logo-image mobile-logo-image"
-              />
+<img 
+  src="/logo.png" 
+  alt="Omni Solutions Logo" 
+  className="logo-image desktop-logo-image"
+/>
               <span className="logo-text mobile-logo-text">OMNI SOLUTIONS</span>
             </Link>
             <button
