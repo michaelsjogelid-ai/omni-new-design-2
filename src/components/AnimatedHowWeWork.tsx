@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { GlowingEffect } from './ui/glowing-effect';
 
 interface Step {
   number: string;
@@ -94,10 +95,19 @@ const AnimatedHowWeWork: React.FC = () => {
   };
 
   return (
-    <div 
+    <div
       ref={sectionRef}
-      className="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 mb-16"
+      className="relative mb-16"
     >
+      <GlowingEffect
+        spread={40}
+        glow={true}
+        disabled={false}
+        proximity={64}
+        inactiveZone={0.01}
+        borderWidth={3}
+      >
+        <div className="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8">
       <h3 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">
         How We Work
       </h3>
@@ -143,6 +153,8 @@ const AnimatedHowWeWork: React.FC = () => {
           );
         })}
       </div>
+        </div>
+      </GlowingEffect>
     </div>
   );
 };
