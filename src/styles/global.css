@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap');
+
 /* CSS Variables */
 :root {
   --color-black: #000000;
@@ -6,9 +8,9 @@
   --color-neon-purple: #ff00ff;
   --color-neon-purple: #8000ff;
   --color-accent-blue: #0080ff;
-
-  --font-primary: 'Outfit', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  
+  --font-primary: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
   
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -36,7 +38,7 @@ html {
 body {
   background-color: var(--color-black);
   color: var(--color-white);
-  font-family: var(--font-body);
+  font-family: var(--font-primary);
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
@@ -96,11 +98,10 @@ body {
 
 .mobile-logo-text {
   font-family: var(--font-primary);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1.1rem;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   color: var(--color-white);
-  text-transform: uppercase;
 }
 
 .mobile-logo-container:hover .mobile-logo-image {
@@ -150,11 +151,10 @@ body {
 
 .desktop-logo-text {
   font-family: var(--font-primary);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1.2rem;
-  letter-spacing: 2.5px;
+  letter-spacing: 2px;
   color: var(--color-white);
-  text-transform: uppercase;
 }
 
 .desktop-logo-container:hover .desktop-logo-image {
@@ -195,7 +195,7 @@ body {
   padding: 1rem 2rem;
   color: var(--color-white);
   text-decoration: none;
-  font-family: var(--font-body);
+  font-family: var(--font-primary);
   font-weight: 500;
   font-size: 1rem;
   transition: all 0.3s ease;
@@ -229,8 +229,8 @@ body {
 }
 
 .nav-item {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
   font-weight: 500;
   color: var(--color-white);
   background: none;
@@ -240,7 +240,7 @@ body {
   border-radius: 25px;
   transition: all var(--animation-duration) var(--animation-easing);
   position: relative;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 
 .nav-item::before {
@@ -437,9 +437,8 @@ body {
 }
 
 .about-description {
-  font-family: var(--font-body);
   font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 1.8;
   opacity: 0.9;
   max-width: 600px;
   margin: 0 auto;
@@ -457,11 +456,8 @@ body {
 }
 
 .services-subtitle {
-  font-family: var(--font-body);
-  font-size: 1.15rem;
-  font-weight: 400;
-  line-height: 1.5;
-  opacity: 0.85;
+  font-size: 1.1rem;
+  opacity: 0.8;
   margin-top: var(--spacing-sm);
   max-width: 600px;
   margin-left: auto;
@@ -566,18 +562,15 @@ body {
 
 .service-title {
   font-family: var(--font-primary);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.5rem;
   margin-bottom: var(--spacing-sm);
   color: var(--color-white);
 }
 
 .service-description {
-  font-family: var(--font-body);
-  font-weight: 400;
-  font-size: 1rem;
-  opacity: 0.85;
-  line-height: 1.55;
+  opacity: 0.8;
+  line-height: 1.6;
   margin-bottom: var(--spacing-md);
   flex-grow: 1;
 }
