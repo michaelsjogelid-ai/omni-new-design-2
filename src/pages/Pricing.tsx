@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom';
 import { Check, Star, ArrowRight, Users, Globe, MessageSquare, Calendar, DollarSign } from 'lucide-react';
 import { LampContainer } from '../components/ui/lamp-colored';
 import { motion } from 'framer-motion';
+import { BentoGrid, type BentoItem } from '../components/ui/bento-grid';
 
 const Pricing: React.FC = () => {
-  const services = [
+  const services: BentoItem[] = [
     {
       icon: <Users size={48} />,
-      name: 'Lead Generation & CRM Integration',
-      price: '€800–€2,000',
+      title: 'Lead Generation & CRM Integration',
+      meta: '€800–€2,000',
       description: 'Complete lead automation system with CRM integration',
-      features: [
+      tags: [
         'Automated lead capture from multiple channels',
         'Smart lead qualification and scoring',
         'CRM integration and data synchronization',
@@ -21,10 +22,10 @@ const Pricing: React.FC = () => {
     },
     {
       icon: <Globe size={48} />,
-      name: 'Website Development',
-      price: '€300–€1,000',
+      title: 'Website Development',
+      meta: '€300–€1,000',
       description: 'Professional websites optimized for conversions',
-      features: [
+      tags: [
         'Mobile-responsive design',
         'Built-in lead capture forms',
         'SEO optimization',
@@ -34,10 +35,10 @@ const Pricing: React.FC = () => {
     },
     {
       icon: <MessageSquare size={48} />,
-      name: 'AI Chat & Customer Support',
-      price: '€300–€1,000',
+      title: 'AI Chat & Customer Support',
+      meta: '€300–€1,000',
       description: '24/7 intelligent customer support automation',
-      features: [
+      tags: [
         'Custom-trained AI chatbots',
         '24/7 automated responses',
         'Multi-language support',
@@ -47,10 +48,10 @@ const Pricing: React.FC = () => {
     },
     {
       icon: <Calendar size={48} />,
-      name: 'Appointment Setting',
-      price: '€300–€1,000',
+      title: 'Appointment Setting',
+      meta: '€300–€1,000',
       description: 'Automated booking and scheduling system',
-      features: [
+      tags: [
         'Smart prospect qualification',
         'Automated calendar management',
         'Follow-up and reminder sequences',
@@ -96,45 +97,8 @@ const Pricing: React.FC = () => {
       <div className="container mx-auto px-6 py-16">
 
         {/* Individual Services */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-400/20 hover:transform hover:scale-105 transition-all duration-300 group"
-            >
-              <div className="text-purple-400 mb-6 group-hover:text-cyan-400 transition-all duration-300 animate-bounce-gentle">
-                {service.icon}
-              </div>
-              
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold text-white mb-2">
-                  {service.name}
-                </h3>
-                <div className="flex items-baseline gap-2 mb-2">
-                  <span className="text-3xl font-bold text-green-400">
-                  <span className="text-3xl font-bold text-purple-400">
-                    {service.price}
-                  </span>
-                  </span>
-                </div>
-                <p className="text-gray-300">
-                  {service.description}
-                </p>
-              </div>
-
-              <div className="mb-6">
-                <h4 className="text-purple-400 font-semibold mb-3">Includes:</h4>
-                <ul className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-3">
-                      <Check size={16} className="text-purple-400 mt-1 flex-shrink-0" />
-                      <span className="text-gray-300 text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
+        <div className="mb-16">
+          <BentoGrid items={services} />
         </div>
 
         {/* Combination Services */}
